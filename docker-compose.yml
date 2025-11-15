@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # Servicio 1: El Servidor Web (Python/Flask)
   web:
     build: ./web_app
     ports:
@@ -10,14 +9,11 @@ services:
       db:
         condition: service_healthy
     
-    # --- SECCIÓN AÑADIDA ---
-    # Pasamos las credenciales de la BD como variables de entorno
     environment:
-      - DB_HOST=db   # IMPORTANTE: Usamos el nombre del servicio 'db'
+      - DB_HOST=db   
       - DB_USER=usuario
       - DB_PASSWORD=12345
       - DB_NAME=nombres
-    # --- FIN DE LA SECCIÓN AÑADIDA ---
 
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000"]
