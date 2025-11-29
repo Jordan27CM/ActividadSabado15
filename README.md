@@ -35,12 +35,16 @@ docker compose up -d --build
 ```
 mostrar contenedores activos 
 ```docker ps```
+
 ver logs del contenedor web
 ```docker log id```
+
 entrar al contenedor web
 ```docker exec -it id bash```
+
 desde web hacer ping a db
 ```apt-get update```
 ```apt-get install -y iputils-ping```
+
 probar persistencia 
 ```docker-compose exec db bash```
